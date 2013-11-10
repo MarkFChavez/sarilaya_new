@@ -23,43 +23,51 @@
   <body>
     
     <div class="container">
-
-      <% if user_signed_in? %>
-          <div class="row">
-            <div class="large-12 columns">
-              <%= current_user.email %> 
-              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-            </div>
-          </div>
-      <% end %>
-
-      <% if notice %>
-        <div class="row">
-          <div class="large-12 columns">
-            <div class="notice center">
-              <span>
-                <%= notice %>
-              </span>
-            </div>
-          </div>
-        </div>
-      <% end %>
-
-      <% if alert %>
-        <div class="row">
-          <div class="large-12 columns">
-            <div class="alert center">
-              <span>
-                <%= alert %>
-              </span>
-            </div>
-          </div>
-        </div>
-      <% end %>
-
+      
       <div class="row">
         <div class="large-12 columns">
-          <%= yield %>
+          <h1 style="float:left">Admin Panel</h1>
+
+          <div class="top20" style="float:right">
+            Hi <%= link_to current_user.email, edit_user_registration_path %> 
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"small alert button", confirm:"Sign off?" %>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+    </div>
+
+    <div class="container">
+        <% if notice %>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="notice center">
+                <span>
+                  <%= notice %>
+                </span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if alert %>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="alert center">
+                <span>
+                  <%= alert %>
+                </span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <%= yield %>
+          </div>
         </div>
       </div>
     </div>

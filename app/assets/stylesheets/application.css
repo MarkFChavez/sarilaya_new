@@ -10,5 +10,30 @@
  *
  *= require_self
  *= require_tree .
- */
  *= require foundation_and_overrides
+ */
+
+ div.container {
+ 	padding:10px;
+ }
+
+ .center {
+ 	text-align: center;
+ }
+
+ .alert {
+	color: red;
+	padding: 5px;
+	letter-spacing: 2px;
+ }
+
+ .notice {
+	color: green;
+	padding: 5px;
+	letter-spacing: 2px;
+ }
+
+ .top5 { margin-top: 5px; }
+ .top10 { margin-top: 10px; }
+ .top15 { margin-top: 15px; }
+ .top20 { margin-top: 20px; }

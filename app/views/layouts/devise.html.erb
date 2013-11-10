@@ -24,19 +24,18 @@
     
     <div class="container">
 
-      <% if user_signed_in? %>
-          <div class="row">
-            <div class="large-12 columns">
-              <%= current_user.email %> 
-              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-            </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="center">
+            <%= image_tag "logo.png", style:"width:350px;height:200px;" %>
           </div>
-      <% end %>
+        </div>
+      </div>
 
       <% if notice %>
         <div class="row">
           <div class="large-12 columns">
-            <div class="notice center">
+            <div class="notice center top20">
               <span>
                 <%= notice %>
               </span>
@@ -48,7 +47,7 @@
       <% if alert %>
         <div class="row">
           <div class="large-12 columns">
-            <div class="alert center">
+            <div class="alert center top20">
               <span>
                 <%= alert %>
               </span>
