@@ -22,22 +22,40 @@
 
   <body>
     
-    <div class="container">
-      
-      <div class="row">
-        <div class="large-12 columns">
-          <h1 style="float:left">Admin Panel</h1>
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><%= link_to "Sarilaya <small style='color:red'>Admin</small>".html_safe, admin_root_path %></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      </ul>
 
-          <div class="top20" style="float:right">
-            Hi <%= link_to current_user.email, edit_user_registration_path %> 
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"small alert button", confirm:"Sign off?" %>
-          </div>
-        </div>
-      </div>
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li class="divider"></li>
+          <li><%= link_to "Articles", admin_articles_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to "Gallery", "#" %></li>
+          <li class="divider"></li>
+          <li><%= link_to "News & Updates", "#" %></li>
+          <li class="divider"></li>
+        </ul>
 
-      <hr />
-
-    </div>
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider"></li>
+          <li><%= link_to current_user.email, edit_user_registration_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to "Go to Site", root_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, confirm:"Are you sure you want to logout?" %></li>
+          <li class="divider"></li>
+        </ul>
+      </section>
+    </nav>
 
     <div class="container">
         <% if notice %>

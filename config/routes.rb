@@ -1,5 +1,7 @@
 Sarilaya::Application.routes.draw do
 
+  get "articles/index"
+
   devise_for :users
 
   root to: "home#index"
@@ -8,6 +10,7 @@ Sarilaya::Application.routes.draw do
   namespace :admin do 
     root to: "dashboard#index"
     resources :dashboard
+    resources :articles
   end
 
   # The priority is based upon order of creation:
