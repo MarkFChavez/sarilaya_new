@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
   attr_accessible :description, :title, :published
 
+  self.per_page = 10
+
   belongs_to :user
 
   scope :published, where(published: true)

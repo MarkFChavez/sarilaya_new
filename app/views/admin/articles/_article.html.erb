@@ -7,9 +7,9 @@
 		<%= link_to "Edit", edit_admin_article_path(article) %> | 
 		<%= link_to "Remove", [:admin, article], method: :delete, style:"color:red", confirm:"Remove this article?" %> | 
 		<% if article.published? %>
-			<%= link_to "Unpublish", unpublish_admin_article_path(article), method: :put %>
+			<%= link_to "Unpublish", unpublish_admin_article_path(article), method: :put, confirm:"Unpublishing this article will prevent users from viewing it. Proceed?" %>
 		<% else %>
-			<%= link_to "Publish", publish_admin_article_path(article), method: :put %>
+			<%= link_to "Publish", publish_admin_article_path(article), method: :put, confirm:"Publishing this article will allow users to view and add comments on it. Proceed?" %>
 		<% end %>
 	</td>
 </tr>

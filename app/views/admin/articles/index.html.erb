@@ -20,6 +20,10 @@
 					</tbody>
 				</table>
 			</div>
+
+			<div class="top10">
+				<%= will_paginate @articles %>
+			</div>
 			
 		<% else %>
 			No articles found. Create <%= link_to "one", new_admin_article_path %>.
