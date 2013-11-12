@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="large-12 columns">
+		<strong>Create new article</strong>
+
+		<% unless @article.errors.empty? %>
+			<div class="top20">
+				<strong class="alert"><%= pluralize(@article.errors.size, "error") %> found:</strong>
+
+				<div class="top5">
+					<ul class="left20">
+						<% @article.errors.full_messages.each do |e| %>
+							<li class="alert"><%= e %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		<% end %>
+		
+		<div class="top20">
+			<%= form_for [:admin, @article] do |f| %>
+				<div>
+					<%= f.label :title %>
+					<%= f.text_field :title %>
+				</div>
+
+				<div>
+					<%= f.label :description %>
+					<%= f.text_area :description, style:"height:200px" %>
+				</div>
+
+				<div>
+					<%= f.check_box :published %> Publish this article?
+				</div>
+
+				<div class="top20">
+					<%= f.submit "Create article", class:"small button" %> 
+					or 
+					<%= link_to "Back to articles", admin_articles_path %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
