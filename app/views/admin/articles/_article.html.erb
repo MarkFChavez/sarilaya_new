@@ -1,10 +1,15 @@
 <tr>
 	<td> <%= article.id %> </td>
 	<td> <%= article.title %> </td>
-	<td> <%= article.description %> </td>
 	<td> <%= article.is_published? %> </td>
 	<td>
 		<%= link_to "Show", [:admin, article] %> | 
-		<%= link_to "Remove", [:admin, article], method: :delete, style:"color:red", confirm:"Remove this article?" %>
+		<%= link_to "Edit", edit_admin_article_path(article) %> | 
+		<%= link_to "Remove", [:admin, article], method: :delete, style:"color:red", confirm:"Remove this article?" %> | 
+		<% if article.published? %>
+			<%= link_to "Unpublish", unpublish_admin_article_path(article), method: :put %>
+		<% else %>
+			<%= link_to "Publish", publish_admin_article_path(article), method: :put %>
+		<% end %>
 	</td>
 </tr>

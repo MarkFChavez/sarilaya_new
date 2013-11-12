@@ -9,7 +9,15 @@
 			<h4><%= @article.title %></h4>
 
 			<div class="top10">
-				<%= @article.description %>
+				<% if @article.is_published? %>
+					<span class="italic">This article is published so this will be displayed on the site.</span>
+				<% else %>
+					<span class="italic">This article is not published so this is not shown to users.</span>
+				<% end %>
+			</div>
+
+			<div class="top10">
+				<%= markdown @article.description %>
 			</div>
 		</div>
 
