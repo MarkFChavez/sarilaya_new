@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="large-12 columns">
+		<div>
+			<%= link_to "Edit this article", edit_admin_article_path(@article), class:"small button" %> 
+			<%= link_to "Remove this article", [:admin, @article], method: :delete, class:"small alert button", confirm:"Remove this article?" %>
+		</div>
+
+		<div>
+			<h4><%= @article.title %></h4>
+
+			<div class="top10">
+				<% if @article.is_published? %>
+					<span class="italic">This article is published so this will be displayed on the site.</span>
+				<% else %>
+					<span class="italic">This article is not published so this is not shown to users.</span>
+				<% end %>
+			</div>
+
+			<div class="top10">
+				<%= markdown @article.description %>
+			</div>
+		</div>
+
+		<div class="top20">
+			<%= link_to "Back to articles", admin_articles_path %>
+		</div>
+	</div>
+</div>

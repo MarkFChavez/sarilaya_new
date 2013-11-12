@@ -21,7 +21,7 @@
  	text-align: center;
  }
 
- .alert {
+ .custom-alert {
 	color: red;
 	padding: 5px;
 	letter-spacing: 2px;
@@ -37,3 +37,12 @@
  .top10 { margin-top: 10px; }
  .top15 { margin-top: 15px; }
  .top20 { margin-top: 20px; }
+
+ .left5 { margin-left: 5px; }
+ .left10 { margin-left: 10px; }
+ .left15 { margin-left: 15px; }
+ .left20 { margin-left: 20px; }
+
+ .clearfix { clear: both;}
+
+ .italic { font-style: italic;}

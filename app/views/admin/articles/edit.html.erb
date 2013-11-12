@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="large-12 columns">
+		<strong>Edit this article</strong>
+
+		<% unless @article.errors.empty? %>
+			<div class="top20">
+				<strong class="custom-alert"><%= pluralize(@article.errors.size, "error") %> found:</strong>
+
+				<div class="top5">
+					<ul class="left20">
+						<% @article.errors.full_messages.each do |e| %>
+							<li class="custom-alert"><%= e %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		<% end %>
+
+		<div class="top20">
+			<%= render "form", commit: "Edit article" %>
+		</div>
+	</div>
+</div>
