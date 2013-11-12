@@ -33,17 +33,6 @@
       </ul>
 
       <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="left">
-          <li class="divider"></li>
-          <li><%= link_to "Articles", admin_articles_path %></li>
-          <li class="divider"></li>
-          <li><%= link_to "Gallery", "#" %></li>
-          <li class="divider"></li>
-          <li><%= link_to "News & Updates", "#" %></li>
-          <li class="divider"></li>
-        </ul>
-
         <!-- Right Nav Section -->
         <ul class="right">
           <li class="divider"></li>
@@ -83,7 +72,27 @@
         <% end %>
 
         <div class="row">
-          <div class="large-12 columns">
+          <div class="large-4 columns">
+            <ul class="side-nav">
+              <li class="divider"></li>
+              <li class="<%= set_active(@current_page, 'Home') %>"><%= link_to "Home", admin_root_path %></li>
+              <li class="divider"></li>
+              <li class="<%= set_active(@current_page, 'Articles') %>"><%= link_to "Articles", admin_articles_path %></li>
+              <li class="divider"></li>
+              <li class="<%= set_active(@current_page, 'Gallery') %>"><%= link_to "Gallery", admin_root_path %></li>
+              <li class="divider"></li>
+              <li class="<%= set_active(@current_page, 'News & Updates') %>"><%= link_to "News & Updates", admin_root_path %></li>
+              <li class="divider"></li>
+            </ul>
+          </div>
+
+          <div class="large-8 columns">
+            <div class="row">
+              <div class="large-12 columns">
+                <h3>Site Administration</h3>
+                <hr />
+              </div>
+            </div>
             <%= yield %>
           </div>
         </div>

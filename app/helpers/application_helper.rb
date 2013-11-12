@@ -6,4 +6,12 @@ module ApplicationHelper
 		end
 	end
 
+	def set_active(current_page=nil, page)
+		if current_page == page
+			"active"
+		else
+			""
+		end
+	end
+
 end

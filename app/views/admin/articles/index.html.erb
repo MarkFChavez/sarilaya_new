@@ -1,1 +1,16 @@
-haha
+<div class="row">
+	<div class="large-12 columns">
+		<% if !@articles.empty? %>
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>Title</th>
+					<th>Description</th>
+				</tr>
+				<%= render @articles %>
+			</table>
+		<% else %>
+			No articles found. Create <%= link_to "one", new_admin_article_path %>.
+		<% end %>
+	</div>
+</div>
